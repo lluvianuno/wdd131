@@ -160,21 +160,21 @@ main h1 {
 /* LINKS SECTION */
 /* ---------------------- */
 
-.card nav ul {
+.card ul {
   list-style: disc;
   padding-left: 1.2rem;
 }
 
-.card nav li {
+.card li {
   margin: 0.4rem 0;
 }
 
-.card nav a {
+.card a {
   color: var(--accent1-color);
   text-decoration: underline;
 }
 
-.card nav a:hover {
+.card a:hover {
   color: var(--secondary-color);
 }
 
