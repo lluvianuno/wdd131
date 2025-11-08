@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Dynamic Web Fundamentals - Lluvia Nuño</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Lluvia Josephine Nuño López. Course landing page for BYU-Pathway Worldwide.">
+    <meta name="author" content="Lluvia Josephine Nuño López">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/base.css">
+</head>
+<body>
+    <header>
+        <!-- El texto va dentro del span, no al revés -->
+        <h1><span id="course-title">WDD 131 - Dynamic Web Fundamentals</span></h1>
+
+        <nav>
+            <!-- Agrega https:// antes del enlace de LinkedIn -->
+            <a href="https://www.linkedin.com/in/lluvia-nuño-lópez-8b8737337" target="_blank">LinkedIn</a>
+            <a href="https://byupw.instructure.com/" target="_blank">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament/dc/81?lang=eng&id=p5#p5" target="_blank">Scripture</a>
+            <a href="#" target="_blank">Final Project</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Lluvia Nuño</h1>
+
+        <section class="card">
+            <h2>About Me</h2>
+            <img src="images/selfie.jpg" alt="A picture of me.">
+            <p>My name is Lluvia. I have lived in México all my life. I'm currently a student at BYU-Pathway Worldwide. My family is very special to me, and I couldn’t go a day without them. I love arts (especially music) and learning new things.</p>
+
+            <div class="country">
+                <h3>Coahuila de Zaragoza, México</h3>
+                <figure>
+                    <img src="images/mexico-flag.jpg" alt="Mexico flag">
+                    <figcaption>Official Flag of México</figcaption>
+                </figure>
+                <p>México is a country in North America known for its rich history, cultural diversity, and vibrant blend of Indigenous and Spanish traditions. It features landscapes ranging from tropical beaches to deserts, forests, and mountains. It is famous for its cuisine, art, and celebrations like Día de Muertos. The main language is Spanish.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Web Development Resources</h2>
+            <nav>
+                <ul>
+                    <li><a href="https://dev.to/" target="_blank">Dev.to Community</a></li>
+                    <li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a></li>
+                    <li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank">W3 Schools</a></li>
+                    <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+                    <li><a href="#">Image Placeholder</a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Lluvia Nuño | México</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <!-- JS -->
+    <script src="scripts/getdates.js"></script>
+</body>
+</html>
