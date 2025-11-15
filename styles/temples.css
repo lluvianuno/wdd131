@@ -42,7 +42,7 @@ header h1 {
     cursor: pointer;
 }
 
-nav .navigation {
+.navigation {
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -55,7 +55,7 @@ nav .navigation {
     display: none; 
 }
 
-nav .navigation.responsive {
+.navigation.responsive {
     display: flex;
 }
 
