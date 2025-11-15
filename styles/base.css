@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #F7E6A9; /* Vanilla */
-  --secondary-color: #8A6674; /* Rose Taupe */
-  --accent1-color: #442D1C; /* Cowhide Cocoa */
-  --accent2-color: #D3D1CE; /* Arctic */
+  --primary-color: #f3f3f3; /* Vanilla */
+  --secondary-color: #54095b; /* Rose Taupe */
+  --accent1-color: #000000; /* Cowhide Cocoa */
+  --accent2-color: #efefef; /* Arctic */
   --heading-font: "Playfair Display", serif;
   --body-font: "Source Sans 3", sans-serif;
 }
