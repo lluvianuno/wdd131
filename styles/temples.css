@@ -59,7 +59,7 @@ header h1 {
     display: flex;
 }
 
-nav .navigation a {
+.navigation a {
     display: block;
     padding: 0.75rem;
     text-align: center;
@@ -68,7 +68,7 @@ nav .navigation a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-nav .navigation a:hover {
+.navigation a:hover {
     background-color: var(--accent1-color);
     color: var(--primary-color);
 }
