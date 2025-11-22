@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place</title>
+    <meta name="author" content="Lluvia Josephine Nuño López">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css">
+    <script src="scripts/place.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>México</h1>
+    </header>
+
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/hero-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/hero-small.webp" media="(min-width: 500px)">
+                <img src="images/hero-small.webp" alt="Chichén Itzá pyramid" width="500" height="250">
+            </picture>
+        
+
+            <section class="data">
+                <h2 id="data-heading">Data</h2>
+                <ul class="data-list">
+                    <li><strong>Area: </strong>1.973 million km²</li>
+                    <li><strong>Population: </strong>132.3 million people</li>
+                    <li><strong>Capital: </strong>Ciudad de México</li>
+                    <li><strong>Languages: </strong>Spanish, 68 indigenous languages</li>
+                    <li><strong>Currency: </strong>Mexican peso</li>
+                    <li><strong>Time Zone: </strong>GMT-6</li>
+                    <li><strong>Calling Code: </strong>+52</li>
+                    <li><strong>Internet TLD: </strong>.mx</li>
+                </ul>
+            </section>
+            
+            <section class="weather">
+                <h2 id="weather-heading">Weather</h2>
+                <img src="images/weather-icon.svg" alt="Weather icon" class="weather-icon-mobile">
+
+                <ul class="weather-list">
+                    <li><strong>Temperature: </strong>10 °C</li>
+                    <li><strong>Conditions: </strong>Partly Cloudy</li>
+                    <li><strong>Wind Speed: </strong>12km/h</li>
+                    <li><strong>Wind Chill:</strong> <span id="wind-chill">N/A</span></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Lluvia Nuño | México</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
