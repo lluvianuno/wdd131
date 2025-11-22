@@ -72,6 +72,10 @@
         display: none;
     }
 
+    .weather h2::after {
+        content: "⛅";
+    }
+
     footer {
         padding: 2rem;
     }
