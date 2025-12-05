@@ -28,17 +28,38 @@ if (productSelect) {
 }
 
 
+// ...existing code...
 // ============= REVIEW COUNTER (runs only on review.html) =============
-// Only count if URL has a query string (we came from the form)
-if (window.location.pathname.includes("review.html") && window.location.search.length > 0) {
-    let reviewCount = Number(localStorage.getItem("reviewCount")) || 0;
-    reviewCount++;
-    localStorage.setItem("reviewCount", reviewCount);
 
-    const counterElement = document.getElementById("review-counter");
-    if (counterElement) {
-        counterElement.textContent = reviewCount;
+// Set a short-lived flag when any form is submitted so review.html can increment once
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', () => {
+    try {
+      localStorage.setItem('submittedReview', '1');
+    } catch (e) {
+      // localStorage may be disabled; fail silently
     }
+  });
+});
+
+
+if (window.location.pathname.includes('review.html')) {
+  const counterElement = document.getElementById('review-counter');
+  let reviewCount = Number(localStorage.getItem('reviewCount')) || 0;
+
+  if (localStorage.getItem('submittedReview')) {
+    reviewCount++;
+    try {
+      localStorage.setItem('reviewCount', reviewCount);
+      localStorage.removeItem('submittedReview');
+    } catch (e) {
+    }
+  }
+
+  if (counterElement) {
+    counterElement.textContent = reviewCount;
+  }
 }
+
 
 
