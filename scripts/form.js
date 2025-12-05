@@ -29,7 +29,8 @@ if (productSelect) {
 
 
 // ============= REVIEW COUNTER (runs only on review.html) =============
-if (window.location.pathname.includes("review.html")) {
+// Only count if URL has a query string (we came from the form)
+if (window.location.pathname.includes("review.html") && window.location.search.length > 0) {
     let reviewCount = Number(localStorage.getItem("reviewCount")) || 0;
     reviewCount++;
     localStorage.setItem("reviewCount", reviewCount);
@@ -39,4 +40,5 @@ if (window.location.pathname.includes("review.html")) {
         counterElement.textContent = reviewCount;
     }
 }
+
 
