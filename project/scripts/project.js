@@ -31,7 +31,7 @@ const recipes = [
     ingredients: ["Spaghetti", "Olive oil", "Garlic", "Red pepper flakes", "Parsley", "Salt"],
     instructions:
       "Cook the spaghetti. In a pan, heat olive oil and sauté sliced garlic until golden. Add red pepper flakes, mix with the pasta, and top with parsley.",
-    imageUrl: "https://images.pexels.com/photos/14899491/pexels-photo-14899491.png",
+    imageUrl: "images/recipes/spaghetti.jpg",
   },
   {
     recipeName: "Classic Pancakes",
@@ -39,7 +39,7 @@ const recipes = [
     ingredients: ["Flour", "Eggs", "Milk", "Sugar", "Baking powder", "Butter", "Salt"],
     instructions:
       "Mix dry ingredients. Add milk and eggs, whisk until smooth. Cook on a hot pan until bubbles form, then flip.",
-    imageUrl: "https://images.pexels.com/photos/4725657/pexels-photo-4725657.jpeg",
+    imageUrl: "images/recipes/pancakes.jpg",
   },
   {
     recipeName: "Chicken Tacos",
@@ -47,7 +47,7 @@ const recipes = [
     ingredients: ["Tortillas", "Shredded chicken", "Onion", "Cilantro", "Lime", "Salt", "Salsa"],
     instructions:
       "Warm the tortillas, fill with chicken, and top with chopped onion, cilantro, lime, and salsa.",
-    imageUrl: "https://images.pexels.com/photos/28959271/pexels-photo-28959271.jpeg",
+    imageUrl: "images/recipes/chicken-tacos.jpg",
   },
   {
     recipeName: "Avocado Toast",
@@ -55,7 +55,7 @@ const recipes = [
     ingredients: ["Bread", "Avocado", "Salt", "Pepper", "Lemon", "Chili flakes"],
     instructions:
       "Toast the bread. Mash the avocado with salt, pepper, and lemon. Spread on toast and add chili flakes.",
-    imageUrl: "https://images.pexels.com/photos/10743562/pexels-photo-10743562.jpeg",
+    imageUrl: "images/recipes/avocado-toast.jpg",
   },
   {
     recipeName: "Caprese Salad",
@@ -63,7 +63,7 @@ const recipes = [
     ingredients: ["Tomatoes", "Fresh mozzarella", "Basil", "Olive oil", "Salt", "Balsamic glaze"],
     instructions:
       "Slice tomatoes and mozzarella. Layer with basil, drizzle olive oil, sprinkle salt, and finish with balsamic glaze.",
-    imageUrl: "https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg",
+    imageUrl: "images/recipes/caprese-salad.jpg",
   },
   {
     recipeName: "Beef Stir Fry",
@@ -71,15 +71,15 @@ const recipes = [
     ingredients: ["Beef strips", "Soy sauce", "Garlic", "Bell peppers", "Onion", "Olive oil"],
     instructions:
       "Cook beef in oil until browned. Add vegetables and garlic. Stir in soy sauce and cook until tender.",
-    imageUrl: "https://images.pexels.com/photos/35063429/pexels-photo-35063429.jpeg",
+    imageUrl: "images/recipes/beef-stir-fry.jpg",
   },
   {
     recipeName: "Chocolate Mug Cake",
     cookTime: "5 minutes",
     ingredients: ["Flour", "Cocoa powder", "Sugar", "Milk", "Oil", "Baking powder"],
     instructions:
-      "Mix all ingredients in a mug. Microwave for 60–90 seconds until cooked.",
-    imageUrl: "https://images.pexels.com/photos/4491394/pexels-photo-4491394.jpeg",
+      "Mix all ingredients in a mug. Microwave for 60-90 seconds until cooked.",
+    imageUrl: "images/recipes/mug-cake.jpg",
   },
   {
     recipeName: "Garlic Butter Shrimp",
@@ -87,7 +87,7 @@ const recipes = [
     ingredients: ["Shrimp", "Butter", "Garlic", "Lemon", "Parsley", "Salt"],
     instructions:
       "Melt butter, sauté garlic, add shrimp, and cook until pink. Finish with lemon juice and parsley.",
-    imageUrl: "https://images.pexels.com/photos/19393934/pexels-photo-19393934.jpeg",
+    imageUrl: "images/recipes/shrimp.jpg",
   },
   {
     recipeName: "Veggie Omelette",
@@ -95,7 +95,7 @@ const recipes = [
     ingredients: ["Eggs", "Onion", "Tomatoes", "Spinach", "Salt", "Pepper", "Oil"],
     instructions:
       "Beat eggs with salt and pepper. Cook vegetables in a pan, add eggs, and cook until firm.",
-    imageUrl: "https://images.pexels.com/photos/1437268/pexels-photo-1437268.jpeg"
+    imageUrl: "images/recipes/omelette.jpg"
   },
   {
     recipeName: "No-Bake Cheesecake Cups",
