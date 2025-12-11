@@ -77,14 +77,15 @@ nav {
 }
 
 .navigation a:hover {
-    color: solid rgba(255, 238, 0, 0.868);
+    color: rgba(255, 238, 0, 0.868);
 }
 
 /*-----------HERO----------*/
 
 .hero img {
     width: 100%;
-    height: 600px;
+    height: auto;
+    max-height: 400px;
     object-fit: cover;
 }
 
@@ -184,6 +185,17 @@ label i {
     font-family: var(--body-font);
     padding: .5rem;
     font-size: 1rem;
+}
+
+/* -----------REFERENCES-------------*/
+.reference p {
+    font-family: var(--body-font);
+    text-align: center;
+}
+
+.reference ul {
+    font-family: var(--body-font);
+    text-align: center;
 }
 
 /* -----------FOOTER-------------*/
