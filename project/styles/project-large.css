@@ -1,0 +1,23 @@
+@media only screen and (min-width: 1038px) {
+
+    #menu {
+        display: none;
+    }
+
+    .navigation {
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background-color: transparent;
+        border: none;
+        gap: 1rem;
+    }
+
+    .navigation a {
+        color: var(--primary-color);
+        border-bottom: none;
+        padding: .5rem 1rem;
+    }
+
+}

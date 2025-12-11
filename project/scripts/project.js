@@ -1,15 +1,18 @@
+// -----------------Set current year in footer
 const currentYear = new Date().getFullYear();
 document.getElementById('currentyear').textContent = currentYear;
 
 const lastModified = document.lastModified;
 document.getElementById('lastModified').textContent = `Last Modification: ${lastModified}`;
 
+
+// -----------------Responsive Navigation Menu-----------------
 const menuButton = document.querySelector('#menu');
 const nav = document.querySelector('.navigation');
 
 menuButton.addEventListener('click', () => {
     nav.classList.toggle('responsive');
-    
+
     if (nav.classList.contains('responsive')) {
         menuButton.innerHTML = '✕';
         menuButton.setAttribute('aria-expanded', 'true');
@@ -19,6 +22,8 @@ menuButton.addEventListener('click', () => {
     }
 });
 
+
+// -----------------Recipes Array--------------------
 const recipes = [
   {
     recipeName: "Spaghetti Aglio e Olio",
@@ -26,7 +31,7 @@ const recipes = [
     ingredients: ["Spaghetti", "Olive oil", "Garlic", "Red pepper flakes", "Parsley", "Salt"],
     instructions:
       "Cook the spaghetti. In a pan, heat olive oil and sauté sliced garlic until golden. Add red pepper flakes, mix with the pasta, and top with parsley.",
-    imageUrl: "",
+    imageUrl: "https://images.pexels.com/photos/14899491/pexels-photo-14899491.png",
   },
   {
     recipeName: "Classic Pancakes",
@@ -34,7 +39,7 @@ const recipes = [
     ingredients: ["Flour", "Eggs", "Milk", "Sugar", "Baking powder", "Butter", "Salt"],
     instructions:
       "Mix dry ingredients. Add milk and eggs, whisk until smooth. Cook on a hot pan until bubbles form, then flip.",
-    imageUrl: "",
+    imageUrl: "https://images.pexels.com/photos/4725657/pexels-photo-4725657.jpeg",
   },
   {
     recipeName: "Chicken Tacos",
@@ -42,7 +47,7 @@ const recipes = [
     ingredients: ["Tortillas", "Shredded chicken", "Onion", "Cilantro", "Lime", "Salt", "Salsa"],
     instructions:
       "Warm the tortillas, fill with chicken, and top with chopped onion, cilantro, lime, and salsa.",
-    imageUrl: "",
+    imageUrl: "https://images.pexels.com/photos/28959271/pexels-photo-28959271.jpeg",
   },
   {
     recipeName: "Avocado Toast",
@@ -50,7 +55,7 @@ const recipes = [
     ingredients: ["Bread", "Avocado", "Salt", "Pepper", "Lemon", "Chili flakes"],
     instructions:
       "Toast the bread. Mash the avocado with salt, pepper, and lemon. Spread on toast and add chili flakes.",
-    imageUrl: "",
+    imageUrl: "https://images.pexels.com/photos/10743562/pexels-photo-10743562.jpeg",
   },
   {
     recipeName: "Caprese Salad",
@@ -58,7 +63,7 @@ const recipes = [
     ingredients: ["Tomatoes", "Fresh mozzarella", "Basil", "Olive oil", "Salt", "Balsamic glaze"],
     instructions:
       "Slice tomatoes and mozzarella. Layer with basil, drizzle olive oil, sprinkle salt, and finish with balsamic glaze.",
-    imageUrl: "",
+    imageUrl: "https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg",
   },
   {
     recipeName: "Beef Stir Fry",
@@ -66,7 +71,7 @@ const recipes = [
     ingredients: ["Beef strips", "Soy sauce", "Garlic", "Bell peppers", "Onion", "Olive oil"],
     instructions:
       "Cook beef in oil until browned. Add vegetables and garlic. Stir in soy sauce and cook until tender.",
-    imageUrl: "",
+    imageUrl: "https://images.pexels.com/photos/35063429/pexels-photo-35063429.jpeg",
   },
   {
     recipeName: "Chocolate Mug Cake",
@@ -74,7 +79,7 @@ const recipes = [
     ingredients: ["Flour", "Cocoa powder", "Sugar", "Milk", "Oil", "Baking powder"],
     instructions:
       "Mix all ingredients in a mug. Microwave for 60–90 seconds until cooked.",
-    imageUrl: "",
+    imageUrl: "https://images.pexels.com/photos/4491394/pexels-photo-4491394.jpeg",
   },
   {
     recipeName: "Garlic Butter Shrimp",
@@ -82,7 +87,7 @@ const recipes = [
     ingredients: ["Shrimp", "Butter", "Garlic", "Lemon", "Parsley", "Salt"],
     instructions:
       "Melt butter, sauté garlic, add shrimp, and cook until pink. Finish with lemon juice and parsley.",
-    imageUrl: "",
+    imageUrl: "https://images.pexels.com/photos/19393934/pexels-photo-19393934.jpeg",
   },
   {
     recipeName: "Veggie Omelette",
@@ -90,52 +95,132 @@ const recipes = [
     ingredients: ["Eggs", "Onion", "Tomatoes", "Spinach", "Salt", "Pepper", "Oil"],
     instructions:
       "Beat eggs with salt and pepper. Cook vegetables in a pan, add eggs, and cook until firm.",
-    imageUrl: ""
+    imageUrl: "https://images.pexels.com/photos/1437268/pexels-photo-1437268.jpeg"
   },
   {
     recipeName: "No-Bake Cheesecake Cups",
     cookTime: "20 minutes + chill time",
-    ingredients: ["Cream cheese", "Sugar", "Vanilla", "Whipped cream", "Graham crackers", "Berries"],
+    ingredients: ["Cream cheese", "Sugar", "Vanilla", "Whipped cream", "Graham crackers", "Strawberries"],
     instructions:
-      "Crush graham crackers into cups. Mix cream cheese, sugar, and vanilla. Fold in whipped cream. Spoon mixture into cups and top with berries.",
-    imageUrl: "",
+      "Crush graham crackers into cups. Mix cream cheese, sugar, and vanilla. Fold in whipped cream. Spoon mixture into cups and top with strawberries.",
+    imageUrl: "images/recipes/cheesecake-cups.jpg"
   }
 ];
 
-createRecipeCard(recipes);
 
-function createRecipeCard(recipesCard) {
-    document.querySelector(".rec-grid").innerHTML = "";
-    recipesCard.forEach(recipe => {
-        let card = document.createElement("section");
-        let name = document.createElement("h3");
-        let time = document.createElement("p");
-        let ingredients = document.createElement("list");
-        let instructions = document.createElement("p");
-        let img = document.createElement("img");
+// ----------------- SAVE FAVORITE -----------------
+function saveFavorite(recipe) {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
-        name.textContent = recipe.recipeName;
-        time.innerHTML = `<span class="label">Time:</span> ${recipe.time}`;
-        ingredients.innerHTML = `<span class="label">Ingredients:</span> ${recipe.ingredients}`;
-        instructions.innerHTML = `<span class="label">Instructions:</span> ${recipe.instructions}`;
-        img.setAttribute("src", recipe.imageUrl);
-        img.setAttribute("alt", `${recipe.recipeName} recipe`);
-        img.setAttribute("loading", "lazy");
-
-        card.appendChild(name);
-        card.appendChild(time);
-        card.appendChild(ingredients);
-        card.appendChild(instructions);
-        card.appendChild(img);
-
-        document.querySelector(".rec-grid").appendChild(card);
-    });
+  // Avoid duplicates
+  if (!favorites.some(fav => fav.recipeName === recipe.recipeName)) {
+    favorites.push(recipe);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    alert("Recipe added to favorites!");
+  } else {
+    alert("This recipe is already in favorites.");
+  }
 }
 
-const homeRecipesLink = document.querySelector("#home");
-const RecipesLink = document.querySelector("#recipes");
-const favRecipesLink = document.querySelector("#favorites");
 
-homeRecipesLink.addEventListener("click", () => {
-    createRecipeCard(recipes);
-})
+// ----------------- CREATE RECIPE CARDS -----------------
+function createRecipeCard(recipesCard) {
+  const container = document.querySelector(".rec-grid");
+
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  recipesCard.forEach(recipe => {
+    let card = document.createElement("section");
+    let name = document.createElement("h3");
+    let time = document.createElement("p");
+    let ingredients = document.createElement("p");
+    let instructions = document.createElement("p");
+    let img = document.createElement("img");
+
+    name.textContent = recipe.recipeName;
+    time.innerHTML = `<span class="label">Time:</span> ${recipe.cookTime}`;
+    ingredients.innerHTML = `<span class="label">Ingredients:</span> ${recipe.ingredients.join(", ")}`;
+    instructions.innerHTML = `<span class="label">Instructions:</span> ${recipe.instructions}`;
+    img.src = recipe.imageUrl;
+    img.alt = `${recipe.recipeName} recipe`;
+    img.loading = "lazy";
+
+    // Favorite button
+    let favButton = document.createElement("button");
+    favButton.textContent = "❤️ Favorite";
+    favButton.classList.add("fav-button");
+
+    favButton.addEventListener("click", () => {
+      saveFavorite(recipe);
+    });
+
+    card.appendChild(name);
+    card.appendChild(time);
+    card.appendChild(ingredients);
+    card.appendChild(instructions);
+    card.appendChild(img);
+    card.appendChild(favButton);
+
+    container.appendChild(card);
+  });
+}
+
+
+// ----------------------------------------
+//                HOME
+// ----------------------------------------
+function setupHome() {
+  const recipesToShow = recipes.slice(0, 4);
+  createRecipeCard(recipesToShow);
+}
+
+
+// ----------------------------------------
+//               RECIPES
+// ----------------------------------------
+function setupRecipes() {
+  createRecipeCard(recipes);
+}
+
+
+// ----------------------------------------
+//              FAVORITES
+// ----------------------------------------
+function setupFavorites() {
+  let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+  if (favorites.length === 0) {
+    document.querySelector(".rec-grid").innerHTML =
+      "<p>No favorites yet. Go add some!</p>";
+    return;
+  }
+  createRecipeCard(favorites);
+}
+
+
+// ----------------------------------------
+//      DETECT PAGE AND RUN
+// ----------------------------------------
+function detectPageAndRun() {
+  const path = window.location.pathname;
+
+  if (path.includes("home.html") || path.includes("index.html") || path.endsWith("/")) {
+    setupHome();
+  }
+  else if (path.includes("recipes.html")) {
+    setupRecipes();
+  }
+  else if (path.includes("favorites.html")) {
+    setupFavorites();
+  }
+}
+
+
+// ----------------------------------------
+//               INITIALIZE
+// ----------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  detectPageAndRun();
+});
