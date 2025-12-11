@@ -151,6 +151,10 @@ label i {
     color: #d31111;
 }
 
+.wf1 input[type="submit"] {
+    font-size: 1rem;
+}
+
 /* -----------FAVORITES-------------*/
 .favorites-page .rec-grid {
     justify-items: center;
