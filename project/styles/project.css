@@ -207,3 +207,8 @@ footer {
     font-family: var(--body-font);
     text-align: center;
 }
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
