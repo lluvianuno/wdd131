@@ -103,7 +103,8 @@ const recipes = [
     ingredients: ["Cream cheese", "Sugar", "Vanilla", "Whipped cream", "Graham crackers", "Strawberries"],
     instructions:
       "Crush graham crackers into cups. Mix cream cheese, sugar, and vanilla. Fold in whipped cream. Spoon mixture into cups and top with strawberries.",
-    imageUrl: "/wdd131/images/recipes/cheesecake-cups.jpg"
+    imageUrl: "images/recipes/cheesecake-cups.jpg"
+
   }
 ];
 
